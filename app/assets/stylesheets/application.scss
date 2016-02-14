@@ -2,10 +2,12 @@
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "scaffolds";
+@import 'flipclock';
 
 
 body{
 	background-color:#9EA2C3;
+	zoom: 90%;
 }
 .panel{
 	background-color:#B9B377;
@@ -13,5 +15,13 @@ body{
 }
 .title{
 	font-size:50px;
-	
+
+}
+#border {
+	font-size:200px;
+	line-height: 80%;
+	color:#B0B2C1;
+	border-line:4px;
+	font-weight:bolder;
+
 }

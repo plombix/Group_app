@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-<h1>Listing Groups</h1>
 <div id="group">
   
 <% @groups.each do |group| %>
@@ -33,7 +31,7 @@
        <div class="pull-right h4">
         <%= best_in_place alone, :group_id, :as => :select, :collection => @groups.all.map {|s| [s.id, s.name]} %>
       </div>
-
+ 
     </div>
 <% end %>
 </div>

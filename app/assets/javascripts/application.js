@@ -16,14 +16,12 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require flipclock.min
 
-// $(document).ready(function() {
-//     $(".best_in_place").best_in_place();
-
-//     $(".best_in_place").best_in_place();
-// });
 
 $(document).ready(function() {
     $('.best_in_place').best_in_place();
-
+    $('.your-clock').FlipClock({
+        clockFace: 'TwentyFourHourClock'
+    });
 })
