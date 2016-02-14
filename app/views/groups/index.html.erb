@@ -5,7 +5,7 @@
 <% @groups.each do |group| %>
 <div class="col-xs-3 panel panel-primary">
   <div class="panel-heading">
-    <div class="title"><%= group.name %></div>
+    <div class="title"><%= best_in_place group ,:name %></div>
     <div>Salle: <%= group.room %></div>
   </div>
   <div class="panel-body">
