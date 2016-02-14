@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Groups</h1>
+<div id="group">
+  
+<% @groups.each do |group| %>
+<div class="col-xs-3 panel panel-primary">
+  <div class="panel-heading">
+    <div class="title"><%= group.name %></div>
+    <div>Salle: <%= group.room %></div>
+  </div>
+  <div class="panel-body">
+    
+    <div>Job: <%= group.task %></div>
+    <% group.learners.sort_by { |h| h[:role] }.reverse.each do |stud| %>
+    <div class="col-xs-12 well">
+    <div class="pull-left h2"><%= stud.name%></div>
+    <div class="pull-right"><%= link_to "X" , alonize_path(stud),method: :put, remote: true, class: "btn btn-danger" %></div>
+    <div class="col-xs-12 h2" > <%= best_in_place stud, :role , :as => :select, :collection => {"0" => "✓" ,"1"=> "Sensei"} %></div>
+    </div>
+    <% end %>
+    <div class="col-xs-12"><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs btn-block" %></div>
+  </div>
+</div>
+<% end %>
+
+
+<div id="alone">
+  <%Learner.group_less.each do |alone|%>
+    <div class="panel panel-info col-xs-12">
+      <div class="pull-left h2">
+        <%= alone.name%>
+      </div>
+       <div class="pull-right h4">
+        <%= best_in_place alone, :group_id, :as => :select, :collection => @groups.all.map {|s| [s.id, s.name]} %>
+      </div>
+
+    </div>
+<% end %>
+</div>
+
+</div>
+
+<%= link_to '+', new_group_path , class: "panel panel-primary panel-heading" ,style: "  font-size:50px; font-weight:bolder; " %>

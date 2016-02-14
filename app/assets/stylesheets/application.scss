@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "scaffolds";
+
+
+body{
+	background-color:#9EA2C3;
+}
+.panel{
+	background-color:#B9B377;
+	margin-left:10px;
+}
+.title{
+	font-size:50px;
+	
+}
