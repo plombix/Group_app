@@ -4,9 +4,10 @@ class LearnersController < ApplicationController
   # GET /learners
   # GET /learners.json$
   def alonize
-    @learner.update_attributes(group_id: nil)
-    respond_to :js
-    # binding.pry
+    if user_signed_in?
+      @learner.update_attributes(group_id: nil)
+      respond_to :js
+    end
   end
   def index
     @learners = Learner.all
@@ -62,19 +63,19 @@ class LearnersController < ApplicationController
   def destroy
     @learner.destroy
     respond_to do |format|
-      format.html { redirect_to learners_url, notice: 'Learner was successfully destroyed.' }
+      format.html { redirect_to :root, notice: 'Learner was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_learner
-      @learner = Learner.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_learner
+    @learner = Learner.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def learner_params
-      params.require(:learner).permit(:name, :group_id, :notes, :role)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def learner_params
+    params.require(:learner).permit(:name, :group_id, :notes, :role)
+  end
 end

@@ -11,6 +11,19 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
   end
+  def rand_populate
+    if user_signed_in?
+      learn_ids = []
+      Learner.all.each{|x| learn_ids << x.id}
+      while learn_ids.count > 0
+        Group.all.each do |grp|
+          a = learn_ids.sample
+          learn_ids.delete(a)
+          Learner.find(a).update_attributes(group_id: grp.id)  unless a.nil?
+        end
+      end
+    end
+  end
 
   # GET /groups/new
   def new
@@ -28,7 +41,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to :root, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -63,13 +76,13 @@ class GroupsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_group
+    @group = Group.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def group_params
-      params.require(:group).permit(:name, :room, :task)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def group_params
+    params.require(:group).permit(:name, :room, :task)
+  end
 end

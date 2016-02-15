@@ -4,6 +4,5 @@
 
 jQuery ->
   $('.best_in_place').bind 'ajax:success', ->
-  	$('#group').load '/groups  #group'
   	location.reload()
   	return

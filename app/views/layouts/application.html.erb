@@ -10,13 +10,21 @@
 <div class="container-fluid">
 
 <div id="border"class="col-xs-1">
-	S
-	I
-	M
-	P
-	L
-	O
-	N
+	S<br/>
+	I<br/>
+	M<br/>
+	P<br/>
+	L<br/>
+	O<br/>
+	N<br/>
+	<div>
+		<%if user_signed_in?%>
+		<%= link_to "Log out" ,destroy_user_session_path ,method: :delete, class: "btn btn-danger btn-xs" %>
+		<%= link_to "Nouveau" ,new_learner_path , class: "btn btn-primary btn-xs" %>
+		<%else%>
+		<%=link_to "Formateur" , new_user_session_path, class: "btn btn-default btn-xs" %>
+		<%end%>
+	</div>
 
 </div>
 	<div class=" col-xs-10">
