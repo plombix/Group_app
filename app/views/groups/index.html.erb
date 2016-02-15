@@ -11,14 +11,15 @@
     <div>Job: <%= group.task %></div>
     <% group.learners.sort_by { |h| h[:role] }.reverse.each do |stud| %>
     <div class="col-xs-12 well">
-    <div id="stud" class="pull-left h2"><%= stud.name%></div>
-    <div class="pull-right"><%= link_to "X" , alonize_path(stud),method: :put, remote: true, class: "btn btn-danger" %></div>
-    <%if user_signed_in?%>
-    <div id="stud" class="col-xs-12 h2" > <%= best_in_place stud, :role , :as => :select, :collection => {"0" => "✓" ,"1"=> "Sensei"} %>
-    </div>
+    <div id="stud" class="pull-left h2"><%= stud.name%><%if user_signed_in?%>
+  <%= best_in_place stud, :role , :as => :select, :collection => {"0" => " ✓" ,"1"=> " Sensei"} %>
+
     <%else%>
-    <div id="stud" class="col-xs-12 h2" > <%= stud.role == 0 ? "✓" :  "Sensei" %></div>
+    <%= stud.role == 0 ? " ✓" :  " Sensei" %>
     <% end %>
+    </div>
+    <div class="pull-right"><%= link_to "X" , alonize_path(stud),method: :put, remote: true, class: "btn btn-danger" %></div>
+
     </div>
     <% end %>
       <% if user_signed_in?%>  
@@ -49,8 +50,8 @@
 
 </div>
 
-<button   class=" panel panel-primary panel-heading" data-toggle="modal" data-target="#myModal" style=" font-size:50px; font-weight:bolder;">
-  +
+<button   class=" panel panel-primary panel-heading glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal" style=" font-size:50px; font-weight:bolder;">
+  
 </button>
 
 <%= link_to '' , random_path,class: 'panel panel-primary panel-heading glyphicon glyphicon-retweet',style:" font-size:60px; font-weight:bolder;" ,remote: :true %>
