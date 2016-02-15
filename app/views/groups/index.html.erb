@@ -11,9 +11,9 @@
     <div>Job: <%= group.task %></div>
     <% group.learners.sort_by { |h| h[:role] }.reverse.each do |stud| %>
     <div class="col-xs-12 well">
-    <div class="pull-left h2"><%= stud.name%></div>
+    <div id="stud" class="pull-left h2"><%= stud.name%></div>
     <div class="pull-right"><%= link_to "X" , alonize_path(stud),method: :put, remote: true, class: "btn btn-danger" %></div>
-    <div class="col-xs-12 h2" > <%= best_in_place stud, :role , :as => :select, :collection => {"0" => "✓" ,"1"=> "Sensei"} %></div>
+    <div id="stud" class="col-xs-12 h2" > <%= best_in_place stud, :role , :as => :select, :collection => {"0" => "✓" ,"1"=> "Sensei"} %></div>
     </div>
     <% end %>
     <div class="col-xs-12"><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs btn-block" %></div>

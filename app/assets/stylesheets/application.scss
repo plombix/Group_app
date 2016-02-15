@@ -12,9 +12,13 @@ body{
 .panel{
 	background-color:#B9B377;
 	margin-left:10px;
+
 }
 .title{
 	font-size:50px;
+	white-space: nowrap;
+ 	 overflow: hidden;
+ 	 text-overflow: ellipsis;
 
 }
 #border {
@@ -24,4 +28,9 @@ body{
 	border-line:4px;
 	font-weight:bolder;
 
+}
+#stud {
+	 white-space: nowrap;
+ 	 overflow: hidden;
+ 	 text-overflow: ellipsis;
 }

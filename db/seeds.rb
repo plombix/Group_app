@@ -6,13 +6,31 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
+User.create!(id: 1, email: 'plombix@gmail.com', password:"alcatraz", password_confirmation:"alcatraz")
 Learner.delete_all
 Group.delete_all
-User.create!(id: 1, email: 'plombix@gmail.com', password:"alcatraz", password_confirmation:"alcatraz")
-10.times do |i|
-	Learner.create!(name: "test_#{i}",notes: "random_stuffs")
-	i+=1
-end
+
+	Learner.create!(name: "Guillaume",notes: "random_stuffs")
+	Learner.create!(name: "Sophie",notes: "random_stuffs")
+	Learner.create!(name: "Jade",notes: "random_stuffs")
+	Learner.create!(name: "Anas",notes: "random_stuffs")
+	Learner.create!(name: "Najib",notes: "random_stuffs")
+	Learner.create!(name: "Marc",notes: "random_stuffs")
+	Learner.create!(name: "Antoine",notes: "random_stuffs")
+	Learner.create!(name: "Thierry",notes: "random_stuffs")
+	Learner.create!(name: "Anthony",notes: "random_stuffs")
+	Learner.create!(name: "Thomas",notes: "random_stuffs")
+	Learner.create!(name: "Vincent",notes: "random_stuffs")
+	Learner.create!(name: "Alexis",notes: "random_stuffs")
+	Learner.create!(name: "Julie",notes: "random_stuffs")
+	Learner.create!(name: "Sabrina",notes: "random_stuffs")
+	Learner.create!(name: "Bertrand",notes: "random_stuffs")
+	Learner.create!(name: "Naima",notes: "random_stuffs")
+	Learner.create!(name: "Othman",notes: "random_stuffs")
+	Learner.create!(name: "Caroline",notes: "random_stuffs")
+	Learner.create!(name: "Didier",notes: "random_stuffs")
+	Learner.create!(name: "Than",notes: "random_stuffs")
+	Learner.create!(name: "Manoël",notes: "random_stuffs")
 Group.create(name:"tata", task:"todo", room:"003")
 Group.create(name:"titi", task:"todo", room:"002")
 Group.create(name:"toto", task:"todo", room:"001")
