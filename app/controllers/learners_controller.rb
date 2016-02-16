@@ -34,7 +34,7 @@ class LearnersController < ApplicationController
 
     respond_to do |format|
       if @learner.save
-        format.html { redirect_to @learner, notice: 'Learner was successfully created.' }
+        format.html { redirect_to :root, notice: 'Learner was successfully created.' }
         format.json { render :show, status: :created, location: @learner }
       else
         format.html { render :new }

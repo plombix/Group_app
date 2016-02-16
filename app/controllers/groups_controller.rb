@@ -11,10 +11,10 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
   end
-  def rand_populate
-    if user_signed_in?
+  def rand_populate 
+    if user_signed_in? && Group.count > 0
       learn_ids = []
-      Learner.all.each{|x| learn_ids << x.id}
+      Learner.all.each{|x| learn_ids << x.id} 
       while learn_ids.count > 0
         Group.all.each do |grp|
           a = learn_ids.sample
@@ -22,6 +22,8 @@ class GroupsController < ApplicationController
           Learner.find(a).update_attributes(group_id: grp.id)  unless a.nil?
         end
       end
+    else
+      redirect_to :root , notice: "Something is missing , authetification and/or at least one group "
     end
   end
 
