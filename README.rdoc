@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+An small Single Page Application coded in Rails + ajax
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Add users
+
+* Create groups 
+
+* Add them manualy
+
+* Or hit the random button to distribute users equitably in all groups
+
+* Sensei role for users in group
+
+* Only one "admin" is possible (he have to delete his account to create a new admin)
+
+NB: i'm not a designer :/  nor a js guy.You may have to reload page(once) to   manualy assign people in group 
+
+
