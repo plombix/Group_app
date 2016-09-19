@@ -54,3 +54,11 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 gem 'best_in_place', '~> 3.0.1'
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+end
+gem 'puma'
