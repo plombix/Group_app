@@ -1,0 +1,55 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (4.0.2)
+      compat_resource (>= 12.10)
+    ark (2.0.0)
+      build-essential (>= 0.0.0)
+      seven_zip (>= 0.0.0)
+      windows (>= 0.0.0)
+    build-essential (6.0.6)
+      compat_resource (>= 12.14)
+      mingw (>= 1.1)
+      seven_zip (>= 0.0.0)
+    compat_resource (12.14.5)
+    homebrew (2.1.2)
+      build-essential (>= 2.1.2)
+    mingw (1.2.4)
+      compat_resource (>= 0.0.0)
+      seven_zip (>= 0.0.0)
+    mysql (5.5.3)
+      yum-mysql-community (>= 0.0.0)
+    nodejs (2.4.4)
+      apt (>= 0.0.0)
+      ark (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      homebrew (>= 0.0.0)
+      yum-epel (>= 0.0.0)
+    ruby_build (1.0.0)
+      yum-epel (>= 0.0.0)
+    seven_zip (2.0.2)
+      windows (>= 1.2.2)
+    vim (2.0.2)
+    windows (2.0.2)
+    yum (4.0.0)
+    yum-epel (1.0.1)
+      yum (>= 3.6)
+    yum-mysql-community (1.0.0)
+      yum (>= 3.2)
+
+GIT
+  remote: https://github.com/aminin/chef-rbenv
+  ref: master
+  sha: 61d0a7c5bf66638d4f155f39316e689205c43cbe
+  specs:
+    rbenv (0.7.3)
+
+DEPENDENCIES
+  apt (>= 0)
+  build-essential (>= 0)
+  mysql (= 5.5.3)
+  nodejs (>= 0)
+  rbenv (>= 0)
+  ruby_build (>= 0)
+  vim (>= 0)
+
