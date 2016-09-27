@@ -8,7 +8,7 @@ vagrant_ssh_config = `vagrant ssh-config`.split("\n")[1..-1].map(&:strip).inject
   k, v = s.split(/\s/, 2).map(&:strip); m[k] = v; m
 end
 
-
+puts vagrant_ssh_config
 server vagrant_ssh_config['HostName'],
   roles: %w{web app db},
   primary: true,

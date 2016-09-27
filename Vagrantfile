@@ -12,12 +12,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end 
 
-  config.vm.provision :shell, path: "install-rvm.sh", args: "stable"
-  config.vm.provision :shell, path: "install-ruby.sh", args: "2.3.0"
+  config.vm.provision :shell, path: "create_server.sh"
+  # config.vm.provision :shell, path: "install-rvm.sh", args: "stable"
+  # config.vm.provision :shell, path: "install-ruby.sh", args: "2.3.0"
 
    config.vm.provision "capistrano" do |cap|
     cap.capfile = '../Group_app/Capfile'
-    cap.rubystring = 'ruby 2.3.0p0' 
+    cap.rubystring = 'ruby 2.3.0' 
     cap.stage = 'testing'
     cap.tasks = ['rvm:install'] 
     cap.environment = { 'ENV_VAR' => 'VALUE' } 
